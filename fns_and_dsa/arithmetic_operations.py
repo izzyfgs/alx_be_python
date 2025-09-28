@@ -29,4 +29,9 @@ def perform_operation(num1: float, num2: float, operation: str):
         return func(num1, num2)
     else:
         return "Error: Invalid operation"
+Arithmetic Operations
+Enter the first number: 7
+Enter the second number: 3
+Enter the operation (add, subtract, multiply, divide): add
+Result: 10.0
 
