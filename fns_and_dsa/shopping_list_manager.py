@@ -45,3 +45,20 @@ choice = input("Enter your choice: ")
 if **name** == "**main**":
 main()
 
+def display_menu():
+    """
+    Displays the main menu for the shopping list manager.
+    The menu offers options to add, remove, view items, or exit.
+    """
+    print("\nShopping List Manager")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View List")
+    print("4. Exit")
+
+while True:
+    display_menu()  # Shows the menu
+    choice = input("Enter your choice: ")
+    # ...handle choices here...
+
+
