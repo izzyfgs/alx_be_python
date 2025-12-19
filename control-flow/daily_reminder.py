@@ -1,34 +1,31 @@
 # daily_reminder.py
 
-# Prompt user for a single task
-task = input("Enter your task for today: ")
+# Prompt user for task details
+task = input("Enter your task: ")
 
-# Prompt for priority level
-priority = input("Enter the priority level (high/medium/low): ").lower()
+# Loop to ensure valid priority
+while True:
+    priority = input("Priority (high/medium/low): ").lower()
+    if priority in ["high", "medium", "low"]:
+        break
+    print("Invalid input. Please enter high, medium, or low.")
 
-# Ask if the task is time-bound
-time_bound = input("Is this task time-bound? (yes/no): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Use match-case to handle different priority levels
+# Process task using match-case
 match priority:
     case "high":
-        reminder = f"High priority task: {task}"
+        reminder = f"'{task}' is a high priority task"
     case "medium":
-        reminder = f"Medium priority task: {task}"
+        reminder = f"'{task}' is a medium priority task"
     case "low":
-        reminder = f"Low priority task: {task}"
-    case _:
-        reminder = f"Task: {task} (unknown priority level)"
+        reminder = f"'{task}' is a low priority task"
 
-# Use if statement to modify the reminder if task is time-bound
+# Modify reminder if time-bound
 if time_bound == "yes":
     reminder += " that requires immediate attention today!"
+else:
+    reminder += ". Consider completing it when you have free time."
 
-# Print the reminder
-print(reminder)
-
-# Optional: loop to ask if user wants another reminder (demonstrates while loop)
-repeat = input("Do you want to review your task again? (yes/no): ").lower()
-while repeat == "yes":
-    print(reminder)
-    repeat = input("Do you want to review your task again? (yes/no): ").lower()
+# Print the final reminder
+print("\nReminder:", reminder)
